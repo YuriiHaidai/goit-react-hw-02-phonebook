@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
+import styles from './ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
@@ -35,7 +36,7 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className={styles.contactForm}>
         <label>
           Name:
           <input
@@ -46,7 +47,6 @@ class ContactForm extends Component {
             placeholder="Enter Name..."
           />
         </label>
-        <br />
 
         <label>
           Number:
@@ -58,7 +58,6 @@ class ContactForm extends Component {
             placeholder="Enter Number..."
           />
         </label>
-        <br />
 
         <button type="submit">Add contact</button>
       </form>

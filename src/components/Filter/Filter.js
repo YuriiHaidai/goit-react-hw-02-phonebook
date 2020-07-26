@@ -13,7 +13,7 @@ const Filter = ({ length, filter, handleChange }) => {
             name="filter"
             value={filter}
             onChange={handleChange}
-            placeholder="Type to filter contacts..."
+            placeholder="Enter name..."
           />
         </label>
       )}
