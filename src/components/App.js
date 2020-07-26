@@ -37,11 +37,15 @@ export default class App extends Component {
   };
 
   addContact = contact => {
+    if (!contact.name || !contact.number) {
+      alert('Enter Name and Number to add contact');
+      return false;
+    }
     const newName = contact.name;
-    const names = this.state.contacts.map(contact =>
+    const isExistName = this.state.contacts.map(contact =>
       contact.name.toLowerCase(),
     );
-    if (names.includes(newName.toLowerCase().trim())) {
+    if (isExistName.includes(newName.toLowerCase().trim())) {
       alert(`${newName} already in contacts`);
     } else {
       this.setState(state => ({
